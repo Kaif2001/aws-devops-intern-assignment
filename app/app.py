@@ -2,69 +2,66 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def home():
     return """
     <html>
-        <head>
-            <title>AWS DevOps Internship Assignment</title>
-        </head>
+    <head>
+        <title>AWS DevOps Internship Assignment</title>
+    </head>
+    <body style="font-family:Arial;text-align:center;margin-top:60px;">
+        <h1>AWS DevOps Internship Assignment</h1>
 
-        <body style="font-family:Arial; text-align:center; margin-top:60px;">
+        <h2>Application Status: Running ✅</h2>
 
-            <h1>AWS DevOps Internship Assignment</h1>
+        <p>Welcome to my AWS DevOps Assignment.</p>
 
-            <h2>Application Status: Running ✅</h2>
+        <p><strong>Developer:</strong> Mohammed Kaif</p>
+        <p><strong>Deployment:</strong> AWS EC2</p>
+        <p><strong>CI/CD:</strong> GitHub Actions</p>
+        <p><strong>Monitoring:</strong> Amazon CloudWatch</p>
 
-            <p>Welcome to my AWS DevOps Assignment.</p>
+        <hr>
 
-            <p><strong>Developer:</strong> Mohammed Kaif</p>
+        <h2>Available Endpoints</h2>
 
-            <p><strong>Deployment:</strong> AWS EC2</p>
+        <p>/</p>
+        <p>/health</p>
+        <p>/ready</p>
+        <p>/info</p>
 
-            <p><strong>CI/CD:</strong> GitHub Actions</p>
-
-            <p><strong>Monitoring:</strong> Amazon CloudWatch</p>
-
-            <hr>
-
-            <h3>Available Endpoints</h3>
-
-            <p>/</p>
-
-            <p>/health</p>
-
-            <p>/info</p>
-
-        </body>
-
+    </body>
     </html>
     """
 
 
 @app.route("/health")
 def health():
-    return jsonify(
-        {
-            "status": "healthy",
-            "application": "AWS DevOps Internship Assignment",
-            "developer": "Mohammed Kaif"
-        }
-    )
+    return jsonify({
+        "application": "AWS DevOps Internship Assignment",
+        "developer": "Mohammed Kaif",
+        "status": "healthy"
+    })
+
+
+@app.route("/ready")
+def ready():
+    return jsonify({
+        "status": "ready"
+    })
 
 
 @app.route("/info")
 def info():
-    return jsonify(
-        {
-            "application": "AWS DevOps Internship Assignment",
-            "developer": "Mohammed Kaif",
-            "cloud": "AWS",
-            "deployment": "EC2",
-            "monitoring": "CloudWatch",
-            "ci_cd": "GitHub Actions"
-        }
-    )
+    return jsonify({
+        "application": "AWS DevOps Internship Assignment",
+        "developer": "Mohammed Kaif",
+        "cloud": "AWS",
+        "deployment": "EC2",
+        "monitoring": "CloudWatch",
+        "ci_cd": "GitHub Actions"
+    })
 
 
 if __name__ == "__main__":
