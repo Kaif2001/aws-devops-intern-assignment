@@ -2,9 +2,11 @@
 
 ## Project Overview
 
-This project demonstrates a production-style deployment of a Flask application on AWS using DevOps best practices.
+This project demonstrates a production-style deployment of a Python Flask application on AWS using DevOps best practices.
 
-## Technologies Used
+---
+
+# Technologies Used
 
 - AWS EC2
 - AWS S3
@@ -16,7 +18,7 @@ This project demonstrates a production-style deployment of a Flask application o
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```
 AWS-DevOps-Intern-Assignment/
@@ -32,41 +34,57 @@ AWS-DevOps-Intern-Assignment/
 │   └── outputs.tf
 │
 ├── screenshots/
+│   ├── application/
 │   ├── cloudwatch/
+│   ├── github-actions/
 │   └── s3/
 │
 ├── .github/
 │   └── workflows/
 │       └── python-app.yml
 │
+├── .gitignore
+│
 └── README.md
 ```
 
 ---
 
-## Features
+# Features
 
-- Flask Application
+- Flask Web Application
+- EC2 Deployment
 - Health Endpoint
 - Ready Endpoint
 - Info Endpoint
-- EC2 Deployment
-- S3 Storage
-- CloudWatch Monitoring
-- Terraform Infrastructure
-- GitHub Actions CI
+- Amazon S3
+- Amazon CloudWatch
+- Terraform Infrastructure as Code
+- GitHub Actions CI/CD
 
 ---
 
-## Endpoints
+# Application URL
 
-### Home
+```
+http://13.206.203.240:5000
+```
+
+---
+
+# API Endpoints
+
+## Home
 
 ```
 /
 ```
 
-### Health
+Displays the application homepage.
+
+---
+
+## Health
 
 ```
 /health
@@ -82,7 +100,9 @@ Returns
 }
 ```
 
-### Ready
+---
+
+## Ready
 
 ```
 /ready
@@ -96,7 +116,9 @@ Returns
 }
 ```
 
-### Info
+---
+
+## Info
 
 ```
 /info
@@ -117,27 +139,37 @@ Returns
 
 ---
 
-## AWS Services Used
+# AWS Services Used
 
-### EC2
+## Amazon EC2
 
-Application Hosting
-
-### S3
-
-Object Storage
-
-### CloudWatch
-
-Application Monitoring
+- Hosting Flask Application
 
 ---
 
-## Terraform
+## Amazon S3
 
-Terraform configuration files are available in the terraform folder.
+- Object Storage
+- Screenshot Storage
 
-Files:
+---
+
+## Amazon CloudWatch
+
+- CPU Monitoring
+- Network Monitoring
+
+---
+
+# Terraform
+
+Terraform configuration files are available inside
+
+```
+terraform/
+```
+
+Files included
 
 - provider.tf
 - variables.tf
@@ -146,17 +178,45 @@ Files:
 
 ---
 
-## GitHub Actions
+# GitHub Actions
 
-GitHub Actions automatically
+GitHub Actions automatically performs
 
 - Checkout Repository
 - Install Python
 - Install Dependencies
-- Check Python Syntax
+- Python Syntax Check
 
 ---
 
-## Developer
+# Screenshots
 
-Mohammed Kaif
+## Flask Application
+
+![Application](screenshots/application/01-home.png)
+
+---
+
+## Amazon S3
+
+![S3](screenshots/s3/01-s3-home.png)
+
+---
+
+## Amazon CloudWatch
+
+![CloudWatch](screenshots/cloudwatch/01-cloudwatch-home.png)
+
+---
+
+## GitHub Actions
+
+![GitHub Actions](screenshots/github-actions/01-workflow-success.png)
+
+---
+
+# Developer
+
+**Mohammed Kaif**
+
+AWS DevOps Internship Assignment
