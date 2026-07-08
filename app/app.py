@@ -7,31 +7,40 @@ app = Flask(__name__)
 def home():
     return """
     <html>
-    <head>
-        <title>AWS DevOps Internship Assignment</title>
-    </head>
-    <body style="font-family:Arial;text-align:center;margin-top:60px;">
-        <h1>AWS DevOps Internship Assignment</h1>
+        <head>
+            <title>AWS DevOps Internship Assignment</title>
+        </head>
 
-        <h2>Application Status: Running ✅</h2>
+        <body style="font-family:Arial; text-align:center; margin-top:60px;">
 
-        <p>Welcome to my AWS DevOps Assignment.</p>
+            <h1>AWS DevOps Internship Assignment</h1>
 
-        <p><strong>Developer:</strong> Mohammed Kaif</p>
-        <p><strong>Deployment:</strong> AWS EC2</p>
-        <p><strong>CI/CD:</strong> GitHub Actions</p>
-        <p><strong>Monitoring:</strong> Amazon CloudWatch</p>
+            <h2>Application Status: Running ✅</h2>
 
-        <hr>
+            <p>Welcome to my AWS DevOps Assignment.</p>
 
-        <h2>Available Endpoints</h2>
+            <p><strong>Developer:</strong> Mohammed Kaif</p>
 
-        <p>/</p>
-        <p>/health</p>
-        <p>/ready</p>
-        <p>/info</p>
+            <p><strong>Deployment:</strong> AWS EC2</p>
 
-    </body>
+            <p><strong>CI/CD:</strong> GitHub Actions</p>
+
+            <p><strong>Monitoring:</strong> Amazon CloudWatch</p>
+
+            <hr>
+
+            <h3>Available Endpoints</h3>
+
+            <p>/</p>
+
+            <p>/health</p>
+
+            <p>/ready</p>
+
+            <p>/info</p>
+
+        </body>
+
     </html>
     """
 
@@ -39,9 +48,9 @@ def home():
 @app.route("/health")
 def health():
     return jsonify({
+        "status": "healthy",
         "application": "AWS DevOps Internship Assignment",
-        "developer": "Mohammed Kaif",
-        "status": "healthy"
+        "developer": "Mohammed Kaif"
     })
 
 
